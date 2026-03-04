@@ -28,8 +28,8 @@ class VirtualTryOnApiTest : BaseApiIntegrationTest() {
         val response = client.virtualTryOn.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.virtualTryOnRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = imagePollMaxAttempts,
+            intervalMillis = imagePollIntervalMillis
         )
         assertBasicResponse(response)
     }

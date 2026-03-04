@@ -28,8 +28,8 @@ class VideoSfxApiTest : BaseApiIntegrationTest() {
         val response = client.videoSfx.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.videoSfxRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = audioPollMaxAttempts,
+            intervalMillis = audioPollIntervalMillis
         )
         assertBasicResponse(response)
     }

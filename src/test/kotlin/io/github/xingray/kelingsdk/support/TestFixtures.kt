@@ -3,16 +3,19 @@ package io.github.xingray.kelingsdk.support
 import io.github.xingray.kelingsdk.image.model.*
 import io.github.xingray.kelingsdk.tryon.model.VirtualTryOnRequest
 import io.github.xingray.kelingsdk.video.model.*
+import java.util.UUID
 
 object TestFixtures {
     // 通用占位ID（使用更接近真实接口风格的值）
     const val TASK_ID = "753908173630445568"
-    const val EXTERNAL_TASK_ID = "it-test-ext-20260304-001"
     const val VIDEO_ID = "753908173630445569"
     const val ELEMENT_ID = "element_1234567890"
     const val VOICE_ID = "voice_1234567890"
     const val SESSION_ID = "session_1234567890"
     const val FACE_ID = "face_1"
+
+    val EXTERNAL_TASK_ID: String
+        get() = newExternalTaskId("it")
 
     // 可公开访问的测试媒体URL
     const val IMAGE_URL = "https://picsum.photos/id/237/1024/1024"
@@ -259,4 +262,8 @@ object TestFixtures {
     )
 
     fun deleteVoiceRequest() = DeleteVoiceRequest(voiceId = VOICE_ID)
+
+    private fun newExternalTaskId(prefix: String): String {
+        return "$prefix-${System.currentTimeMillis()}-${UUID.randomUUID().toString().replace("-", "").take(8)}"
+    }
 }

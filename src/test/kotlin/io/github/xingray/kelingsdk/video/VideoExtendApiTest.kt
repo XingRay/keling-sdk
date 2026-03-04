@@ -28,8 +28,8 @@ class VideoExtendApiTest : BaseApiIntegrationTest() {
         val response = client.videoExtend.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.videoExtendRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = videoPollMaxAttempts,
+            intervalMillis = videoPollIntervalMillis
         )
         assertBasicResponse(response)
     }

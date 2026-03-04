@@ -28,8 +28,8 @@ class OmniVideoApiTest : BaseApiIntegrationTest() {
         val response = client.omniVideo.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.omniVideoRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = videoPollMaxAttempts,
+            intervalMillis = videoPollIntervalMillis
         )
         assertBasicResponse(response)
     }

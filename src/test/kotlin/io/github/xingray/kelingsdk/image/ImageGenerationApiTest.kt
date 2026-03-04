@@ -28,8 +28,8 @@ class ImageGenerationApiTest : BaseApiIntegrationTest() {
         val response = client.imageGeneration.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.imageGenerationRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = imagePollMaxAttempts,
+            intervalMillis = imagePollIntervalMillis
         )
         assertBasicResponse(response)
     }

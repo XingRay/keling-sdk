@@ -5,60 +5,6 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
- * 音色引用项
- */
-@Serializable
-data class VoiceItem(
-    /** 音色ID，通过音色定制接口返回或使用系统预置音色 */
-    @SerialName("voice_id")
-    val voiceId: String = ""
-)
-
-/**
- * 运镜配置参数
- */
-@Serializable
-data class CameraConfig(
-    /** 水平运镜，沿x轴平移，取值范围[-10, 10] */
-    @SerialName("horizontal")
-    val horizontal: Float? = null,
-
-    /** 垂直运镜，沿y轴平移，取值范围[-10, 10] */
-    @SerialName("vertical")
-    val vertical: Float? = null,
-
-    /** 水平摇镜，绕y轴旋转，取值范围[-10, 10] */
-    @SerialName("pan")
-    val pan: Float? = null,
-
-    /** 垂直摇镜，沿x轴旋转，取值范围[-10, 10] */
-    @SerialName("tilt")
-    val tilt: Float? = null,
-
-    /** 旋转运镜，绕z轴旋转，取值范围[-10, 10] */
-    @SerialName("roll")
-    val roll: Float? = null,
-
-    /** 变焦，控制焦距变化，取值范围[-10, 10] */
-    @SerialName("zoom")
-    val zoom: Float? = null
-)
-
-/**
- * 运镜控制
- */
-@Serializable
-data class CameraControl(
-    /** 预定义的运镜类型，枚举值：simple, down_back, forward_up, right_turn_forward, left_turn_forward */
-    @SerialName("type")
-    val type: String? = null,
-
-    /** 运镜配置参数，当type为simple时必填，6选1 */
-    @SerialName("config")
-    val config: CameraConfig? = null
-)
-
-/**
  * 文生视频创建任务请求
  * 基于文档3-4节
  */

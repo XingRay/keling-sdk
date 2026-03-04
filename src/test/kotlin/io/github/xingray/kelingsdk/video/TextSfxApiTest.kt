@@ -28,8 +28,8 @@ class TextSfxApiTest : BaseApiIntegrationTest() {
         val response = client.textSfx.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.textSfxRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = audioPollMaxAttempts,
+            intervalMillis = audioPollIntervalMillis
         )
         assertBasicResponse(response)
     }

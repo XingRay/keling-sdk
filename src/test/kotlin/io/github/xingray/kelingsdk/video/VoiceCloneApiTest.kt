@@ -28,8 +28,8 @@ class VoiceCloneApiTest : BaseApiIntegrationTest() {
         val response = client.voiceClone.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.voiceCloneRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = audioPollMaxAttempts,
+            intervalMillis = audioPollIntervalMillis
         )
         assertBasicResponse(response)
     }

@@ -28,8 +28,8 @@ class MultiImageApiTest : BaseApiIntegrationTest() {
         val response = client.multiImage.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.multiImageRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = imagePollMaxAttempts,
+            intervalMillis = imagePollIntervalMillis
         )
         assertBasicResponse(response)
     }

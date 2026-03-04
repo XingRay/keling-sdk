@@ -28,8 +28,8 @@ class OmniImageApiTest : BaseApiIntegrationTest() {
         val response = client.omniImage.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.omniImageRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = imagePollMaxAttempts,
+            intervalMillis = imagePollIntervalMillis
         )
         assertBasicResponse(response)
     }

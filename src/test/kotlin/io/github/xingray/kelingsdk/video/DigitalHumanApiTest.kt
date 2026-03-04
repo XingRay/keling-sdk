@@ -28,8 +28,8 @@ class DigitalHumanApiTest : BaseApiIntegrationTest() {
         val response = client.digitalHuman.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.digitalHumanRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = videoPollMaxAttempts,
+            intervalMillis = videoPollIntervalMillis
         )
         assertBasicResponse(response)
     }

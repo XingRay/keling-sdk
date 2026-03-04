@@ -28,8 +28,8 @@ class AiMultiShotApiTest : BaseApiIntegrationTest() {
         val response = client.aiMultiShot.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.aiMultiShotRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = imagePollMaxAttempts,
+            intervalMillis = imagePollIntervalMillis
         )
         assertBasicResponse(response)
     }

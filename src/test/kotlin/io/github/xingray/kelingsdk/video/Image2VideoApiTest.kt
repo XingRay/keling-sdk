@@ -28,8 +28,8 @@ class Image2VideoApiTest : BaseApiIntegrationTest() {
         val response = client.image2Video.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.image2VideoRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = videoPollMaxAttempts,
+            intervalMillis = videoPollIntervalMillis
         )
         assertBasicResponse(response)
     }

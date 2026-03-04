@@ -63,8 +63,8 @@ class MultiModalEditApiTest : BaseApiIntegrationTest() {
         val response = client.multiModalEdit.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.multiModalEditRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = videoPollMaxAttempts,
+            intervalMillis = videoPollIntervalMillis
         )
         assertBasicResponse(response)
     }

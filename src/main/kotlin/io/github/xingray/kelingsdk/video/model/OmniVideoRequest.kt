@@ -5,66 +5,6 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
- * 多镜头分镜信息项
- */
-@Serializable
-data class MultiPromptItem(
-    /** 分镜序号 */
-    @SerialName("index")
-    val index: Int = 0,
-
-    /** 分镜提示词，最大长度不超过512 */
-    @SerialName("prompt")
-    val prompt: String = "",
-
-    /** 分镜时长，不小于1，不大于总时长 */
-    @SerialName("duration")
-    val duration: Int = 0
-)
-
-/**
- * Omni-Video 参考图片项
- */
-@Serializable
-data class OmniVideoImageItem(
-    /** 图片URL或Base64编码 */
-    @SerialName("image_url")
-    val imageUrl: String = "",
-
-    /** 图片类型，first_frame为首帧，end_frame为尾帧，不设置时为普通参考图 */
-    @SerialName("type")
-    val type: String? = null
-)
-
-/**
- * Omni-Video 主体参考项
- */
-@Serializable
-data class OmniVideoElementItem(
-    /** 主体库中的主体ID */
-    @SerialName("element_id")
-    val elementId: String = ""
-)
-
-/**
- * Omni-Video 参考视频项
- */
-@Serializable
-data class OmniVideoItem(
-    /** 参考视频的URL */
-    @SerialName("video_url")
-    val videoUrl: String = "",
-
-    /** 参考视频类型，feature为特征参考视频，base为待编辑视频 */
-    @SerialName("refer_type")
-    val referType: String? = null,
-
-    /** 是否保留视频原声，yes为保留，no为不保留 */
-    @SerialName("keep_original_sound")
-    val keepOriginalSound: String? = null
-)
-
-/**
  * Omni-Video 创建任务请求
  * 基于文档3-1节
  */
@@ -94,7 +34,7 @@ data class OmniVideoRequest(
     @SerialName("image_list")
     val imageList: List<OmniVideoImageItem>? = null,
 
-    /** 参考主体列表 */
+    /** 主体参考列表 */
     @SerialName("element_list")
     val elementList: List<OmniVideoElementItem>? = null,
 

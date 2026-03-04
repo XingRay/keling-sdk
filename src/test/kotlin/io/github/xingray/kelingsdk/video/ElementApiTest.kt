@@ -28,8 +28,8 @@ class ElementApiTest : BaseApiIntegrationTest() {
         val response = client.element.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.createElementRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = videoPollMaxAttempts,
+            intervalMillis = videoPollIntervalMillis
         )
         assertBasicResponse(response)
     }

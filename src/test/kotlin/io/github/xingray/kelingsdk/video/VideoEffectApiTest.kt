@@ -36,8 +36,8 @@ class VideoEffectApiTest : BaseApiIntegrationTest() {
         val response = client.videoEffect.createSingleAndPollQuery(
             credentials = credentials,
             request = TestFixtures.videoEffectSingleRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = videoPollMaxAttempts,
+            intervalMillis = videoPollIntervalMillis
         )
         assertBasicResponse(response)
     }
@@ -48,8 +48,8 @@ class VideoEffectApiTest : BaseApiIntegrationTest() {
         val response = client.videoEffect.createDualAndPollQuery(
             credentials = credentials,
             request = TestFixtures.videoEffectDualRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = videoPollMaxAttempts,
+            intervalMillis = videoPollIntervalMillis
         )
         assertBasicResponse(response)
     }

@@ -1,23 +1,7 @@
 package io.github.xingray.kelingsdk.video.model
 
-import io.github.xingray.kelingsdk.common.WatermarkInfo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-
-/**
- * 对口型-人脸识别请求
- * 基于文档3-30节
- */
-@Serializable
-data class LipSyncFaceDetectRequest(
-    /** 通过可灵AI生成的视频ID，与video_url二选一 */
-    @SerialName("video_id")
-    val videoId: String? = null,
-
-    /** 所上传视频的获取URL，与video_id二选一 */
-    @SerialName("video_url")
-    val videoUrl: String? = null
-)
 
 /**
  * 对口型-人脸选择项
@@ -55,31 +39,4 @@ data class FaceChoose(
     /** 原始视频音量大小，取值范围[0, 2] */
     @SerialName("original_audio_volume")
     val originalAudioVolume: Float? = null
-)
-
-/**
- * 对口型创建任务请求(新版)
- * 基于文档3-31节
- */
-@Serializable
-data class LipSyncRequest(
-    /** 会话ID，由对口型人脸识别接口生成 */
-    @SerialName("session_id")
-    val sessionId: String = "",
-
-    /** 指定人脸对口型，暂仅支持单人 */
-    @SerialName("face_choose")
-    val faceChoose: List<FaceChoose> = emptyList(),
-
-    /** 水印配置 */
-    @SerialName("watermark_info")
-    val watermarkInfo: List<WatermarkInfo>? = null,
-
-    /** 自定义任务ID */
-    @SerialName("external_task_id")
-    val externalTaskId: String? = null,
-
-    /** 回调通知地址 */
-    @SerialName("callback_url")
-    val callbackUrl: String? = null
 )

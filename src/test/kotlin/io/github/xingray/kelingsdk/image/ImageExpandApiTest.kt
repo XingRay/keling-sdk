@@ -28,8 +28,8 @@ class ImageExpandApiTest : BaseApiIntegrationTest() {
         val response = client.imageExpand.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.imageExpandRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = imagePollMaxAttempts,
+            intervalMillis = imagePollIntervalMillis
         )
         assertBasicResponse(response)
     }

@@ -28,8 +28,8 @@ class Text2VideoApiTest : BaseApiIntegrationTest() {
         val response = client.text2Video.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.text2VideoRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = videoPollMaxAttempts,
+            intervalMillis = videoPollIntervalMillis
         )
         assertBasicResponse(response)
     }

@@ -14,6 +14,15 @@ abstract class BaseApiIntegrationTest {
     protected lateinit var credentials: Credentials
     protected lateinit var client: KelingClient
 
+    protected val imagePollMaxAttempts: Int = 30
+    protected val imagePollIntervalMillis: Long = 2000
+
+    protected val videoPollMaxAttempts: Int = 150
+    protected val videoPollIntervalMillis: Long = 2000
+
+    protected val audioPollMaxAttempts: Int = 60
+    protected val audioPollIntervalMillis: Long = 2000
+
     @BeforeEach
     fun setUpClient() {
         if (!isEnvReady()) {

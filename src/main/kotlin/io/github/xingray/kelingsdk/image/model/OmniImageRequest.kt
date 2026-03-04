@@ -5,26 +5,6 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
- * Omni-Image 图像参考项
- */
-@Serializable
-data class OmniImageItem(
-    /** 图片URL或Base64编码 */
-    @SerialName("image_url")
-    val imageUrl: String = ""
-)
-
-/**
- * Omni-Image 主体参考项
- */
-@Serializable
-data class OmniElementItem(
-    /** 主体库中的主体ID */
-    @SerialName("element_id")
-    val elementId: String = ""
-)
-
-/**
  * Omni-Image 创建任务请求
  */
 @Serializable

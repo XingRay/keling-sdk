@@ -35,8 +35,8 @@ class LipSyncApiTest : BaseApiIntegrationTest() {
         val response = client.lipSync.createAndPollQuery(
             credentials = credentials,
             request = TestFixtures.lipSyncRequest(),
-            maxAttempts = 3,
-            intervalMillis = 1000
+            maxAttempts = videoPollMaxAttempts,
+            intervalMillis = videoPollIntervalMillis
         )
         assertBasicResponse(response)
     }
