@@ -4,7 +4,7 @@ plugins {
     `maven-publish`
 }
 
-group = "io.github.xingray"
+group = "com.github.XingRay"
 version = "0.0.1"
 
 repositories {
