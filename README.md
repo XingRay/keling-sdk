@@ -14,7 +14,78 @@
 - Gradle
 - Kotlin 2.1+
 
-### 安装与构建
+### 依赖引入
+
+#### 通过 JitPack 引入
+
+**Gradle (Kotlin DSL)**
+
+在项目根目录的 `settings.gradle.kts` 中添加 JitPack 仓库：
+
+```kotlin
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+```
+
+在模块的 `build.gradle.kts` 中添加依赖：
+
+```kotlin
+dependencies {
+    implementation("com.github.XingRay:keling-sdk:0.0.1")
+}
+```
+
+**Gradle (Groovy DSL)**
+
+在项目根目录的 `settings.gradle` 中添加 JitPack 仓库：
+
+```groovy
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+在模块的 `build.gradle` 中添加依赖：
+
+```groovy
+dependencies {
+    implementation 'com.github.XingRay:keling-sdk:0.0.1'
+}
+```
+
+**Maven**
+
+在 `pom.xml` 中添加 JitPack 仓库：
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+添加依赖：
+
+```xml
+<dependency>
+    <groupId>com.github.XingRay</groupId>
+    <artifactId>keling-sdk</artifactId>
+    <version>0.0.1</version>
+</dependency>
+```
+
+> **提示**：将 `0.0.1` 替换为最新的版本号或使用 Git 标签/提交哈希。查看可用版本：https://jitpack.io/#XingRay/keling-sdk
+
+#### 本地构建
 ```bash
 gradle build
 ```
@@ -94,9 +165,80 @@ This is a Kotlin SDK for Keling APIs, with a unified `KelingClient` covering ima
 ### Requirements
 - JDK 17+
 - Gradle
-- Kotlin 2.1+
+- Kotlin 2.3+
 
-### Build
+### Installation
+
+#### Via JitPack
+
+**Gradle (Kotlin DSL)**
+
+Add JitPack repository in your root `settings.gradle.kts`:
+
+```kotlin
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+```
+
+Add dependency in your module's `build.gradle.kts`:
+
+```kotlin
+dependencies {
+    implementation("com.github.XingRay:keling-sdk:0.0.1")
+}
+```
+
+**Gradle (Groovy DSL)**
+
+Add JitPack repository in your root `settings.gradle`:
+
+```groovy
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+Add dependency in your module's `build.gradle`:
+
+```groovy
+dependencies {
+    implementation 'com.github.XingRay:keling-sdk:0.0.1'
+}
+```
+
+**Maven**
+
+Add JitPack repository in your `pom.xml`:
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+Add dependency:
+
+```xml
+<dependency>
+    <groupId>com.github.XingRay</groupId>
+    <artifactId>keling-sdk</artifactId>
+    <version>0.0.1</version>
+</dependency>
+```
+
+> **Tip**: Replace `0.0.1` with the latest version or use Git tags/commit hashes. Check available versions at: https://jitpack.io/#XingRay/keling-sdk
+
+#### Local Build
 ```bash
 gradle build
 ```
