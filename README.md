@@ -35,7 +35,7 @@ dependencyResolutionManagement {
 
 ```kotlin
 dependencies {
-    implementation("com.github.XingRay:keling-sdk:0.0.1")
+    implementation("io.github.xingray:keling-sdk:0.0.1")
 }
 ```
 
@@ -56,7 +56,7 @@ dependencyResolutionManagement {
 
 ```groovy
 dependencies {
-    implementation 'com.github.XingRay:keling-sdk:0.0.1'
+    implementation 'io.github.xingray:keling-sdk:0.0.1'
 }
 ```
 
@@ -77,7 +77,7 @@ dependencies {
 
 ```xml
 <dependency>
-    <groupId>com.github.XingRay</groupId>
+    <groupId>io.github.xingray</groupId>
     <artifactId>keling-sdk</artifactId>
     <version>0.0.1</version>
 </dependency>
@@ -188,7 +188,7 @@ Add dependency in your module's `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("com.github.XingRay:keling-sdk:0.0.1")
+    implementation("io.github.xingray:keling-sdk:0.0.1")
 }
 ```
 
@@ -209,7 +209,7 @@ Add dependency in your module's `build.gradle`:
 
 ```groovy
 dependencies {
-    implementation 'com.github.XingRay:keling-sdk:0.0.1'
+    implementation 'io.github.xingray:keling-sdk:0.0.1'
 }
 ```
 
@@ -230,7 +230,7 @@ Add dependency:
 
 ```xml
 <dependency>
-    <groupId>com.github.XingRay</groupId>
+    <groupId>io.github.xingray</groupId>
     <artifactId>keling-sdk</artifactId>
     <version>0.0.1</version>
 </dependency>
