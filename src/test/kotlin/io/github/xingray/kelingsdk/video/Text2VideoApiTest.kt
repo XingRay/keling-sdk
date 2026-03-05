@@ -44,7 +44,7 @@ class Text2VideoApiTest : BaseApiIntegrationTest() {
     @Test
     fun queryByExternalId_withCredentials_shouldReturnResponse() = runBlocking {
         assumeEnvReady()
-        val response = client.text2Video.queryByExternalId(credentials, TestFixtures.EXTERNAL_TASK_ID)
+        val response = client.text2Video.queryByExternalId(credentials, TestFixtures.externalTaskId())
         assertBasicResponse(response)
     }
 

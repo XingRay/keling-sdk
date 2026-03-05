@@ -44,7 +44,7 @@ class VirtualTryOnApiTest : BaseApiIntegrationTest() {
     @Test
     fun queryByExternalId_withCredentials_shouldReturnResponse() = runBlocking {
         assumeEnvReady()
-        val response = client.virtualTryOn.queryByExternalId(credentials, TestFixtures.EXTERNAL_TASK_ID)
+        val response = client.virtualTryOn.queryByExternalId(credentials, TestFixtures.externalTaskId())
         assertBasicResponse(response)
     }
 

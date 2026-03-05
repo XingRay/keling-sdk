@@ -44,7 +44,7 @@ class ImageGenerationApiTest : BaseApiIntegrationTest() {
     @Test
     fun queryByExternalId_withCredentials_shouldReturnResponse() = runBlocking {
         assumeEnvReady()
-        val response = client.imageGeneration.queryByExternalId(credentials, TestFixtures.EXTERNAL_TASK_ID)
+        val response = client.imageGeneration.queryByExternalId(credentials, TestFixtures.externalTaskId())
         assertBasicResponse(response)
     }
 

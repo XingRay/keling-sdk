@@ -44,7 +44,7 @@ class VoiceCloneApiTest : BaseApiIntegrationTest() {
     @Test
     fun queryByExternalId_withCredentials_shouldReturnResponse() = runBlocking {
         assumeEnvReady()
-        val response = client.voiceClone.queryByExternalId(credentials, TestFixtures.EXTERNAL_TASK_ID)
+        val response = client.voiceClone.queryByExternalId(credentials, TestFixtures.externalTaskId())
         assertBasicResponse(response)
     }
 

@@ -14,8 +14,7 @@ object TestFixtures {
     const val SESSION_ID = "session_1234567890"
     const val FACE_ID = "face_1"
 
-    val EXTERNAL_TASK_ID: String
-        get() = newExternalTaskId("it")
+    fun externalTaskId(): String = newExternalTaskId("it")
 
     // 可公开访问的测试媒体URL
     const val IMAGE_URL = "https://picsum.photos/id/237/1024/1024"
@@ -36,7 +35,7 @@ object TestFixtures {
         n = 1,
         aspectRatio = "1:1",
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun imageGenerationRequest() = ImageGenerationRequest(
@@ -45,7 +44,7 @@ object TestFixtures {
         n = 1,
         aspectRatio = "16:9",
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun multiImageRequest() = MultiImageRequest(
@@ -55,7 +54,7 @@ object TestFixtures {
         n = 1,
         aspectRatio = "1:1",
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun imageExpandRequest() = ImageExpandRequest(
@@ -67,13 +66,13 @@ object TestFixtures {
         prompt = "向四周自然延展背景",
         n = 1,
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun aiMultiShotRequest() = AiMultiShotRequest(
         elementFrontalImage = IMAGE_URL,
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun virtualTryOnRequest() = VirtualTryOnRequest(
@@ -81,7 +80,7 @@ object TestFixtures {
         humanImage = IMAGE_URL,
         clothImage = IMAGE_URL_2,
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun actionControlRequest() = ActionControlRequest(
@@ -92,7 +91,7 @@ object TestFixtures {
         characterOrientation = "image",
         mode = "std",
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun digitalHumanRequest() = DigitalHumanRequest(
@@ -101,7 +100,7 @@ object TestFixtures {
         prompt = "自然口播，语速平稳",
         mode = "std",
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun createElementRequest() = CreateElementRequest(
@@ -111,7 +110,7 @@ object TestFixtures {
         elementImageList = listOf(ElementImageItem(imageUrl = IMAGE_URL, frontalImage = true)),
         tagList = listOf(ElementTag(tagId = "o_102")),
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun deleteElementRequest() = DeleteElementRequest(elementId = ELEMENT_ID)
@@ -125,7 +124,7 @@ object TestFixtures {
         aspectRatio = "16:9",
         sound = "off",
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun imageRecognizeRequest() = ImageRecognizeRequest(image = IMAGE_URL)
@@ -146,7 +145,7 @@ object TestFixtures {
             )
         ),
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun multiImage2VideoRequest() = MultiImage2VideoRequest(
@@ -162,7 +161,7 @@ object TestFixtures {
         duration = "5",
         aspectRatio = "16:9",
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun multiModalEditInitRequest() = MultiModalEditInitRequest(videoUrl = VIDEO_URL)
@@ -184,7 +183,7 @@ object TestFixtures {
         mode = "std",
         duration = "5",
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun omniVideoRequest() = OmniVideoRequest(
@@ -195,7 +194,7 @@ object TestFixtures {
         duration = "5",
         aspectRatio = "16:9",
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun text2VideoRequest() = Text2VideoRequest(
@@ -206,7 +205,7 @@ object TestFixtures {
         duration = "5",
         aspectRatio = "16:9",
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun videoExtendRequest() = VideoExtendRequest(
@@ -214,21 +213,21 @@ object TestFixtures {
         videoId = VIDEO_ID,
         prompt = "延续前一镜头动作",
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun videoEffectSingleRequest() = VideoEffectSingleRequest(
         effectScene = "raid_check",
         input = VideoEffectSingleInput(image = IMAGE_URL),
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun videoEffectDualRequest() = VideoEffectDualRequest(
         effectScene = "hug_pro",
         input = VideoEffectDualInput(images = listOf(IMAGE_URL, IMAGE_URL_2)),
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun videoSfxRequest() = VideoSfxRequest(
@@ -237,14 +236,14 @@ object TestFixtures {
         bgmPrompt = "轻柔钢琴背景音乐",
         asmrMode = false,
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun textSfxRequest() = TextSfxRequest(
         prompt = "雷雨天气，窗外风声",
         duration = 5.0f,
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun ttsRequest() = TtsRequest(
@@ -258,7 +257,7 @@ object TestFixtures {
         voiceName = "integration_test_voice",
         voiceUrl = AUDIO_URL,
         callbackUrl = CALLBACK_URL,
-        externalTaskId = EXTERNAL_TASK_ID
+        externalTaskId = externalTaskId()
     )
 
     fun deleteVoiceRequest() = DeleteVoiceRequest(voiceId = VOICE_ID)

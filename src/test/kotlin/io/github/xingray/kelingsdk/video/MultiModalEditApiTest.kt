@@ -79,7 +79,7 @@ class MultiModalEditApiTest : BaseApiIntegrationTest() {
     @Test
     fun queryByExternalId_withCredentials_shouldReturnResponse() = runBlocking {
         assumeEnvReady()
-        val response = client.multiModalEdit.queryByExternalId(credentials, TestFixtures.EXTERNAL_TASK_ID)
+        val response = client.multiModalEdit.queryByExternalId(credentials, TestFixtures.externalTaskId())
         assertBasicResponse(response)
     }
 

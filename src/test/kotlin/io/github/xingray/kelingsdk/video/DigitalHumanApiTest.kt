@@ -44,7 +44,7 @@ class DigitalHumanApiTest : BaseApiIntegrationTest() {
     @Test
     fun queryByExternalId_withCredentials_shouldReturnResponse() = runBlocking {
         assumeEnvReady()
-        val response = client.digitalHuman.queryByExternalId(credentials, TestFixtures.EXTERNAL_TASK_ID)
+        val response = client.digitalHuman.queryByExternalId(credentials, TestFixtures.externalTaskId())
         assertBasicResponse(response)
     }
 

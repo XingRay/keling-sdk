@@ -64,7 +64,7 @@ class VideoEffectApiTest : BaseApiIntegrationTest() {
     @Test
     fun queryByExternalId_withCredentials_shouldReturnResponse() = runBlocking {
         assumeEnvReady()
-        val response = client.videoEffect.queryByExternalId(credentials, TestFixtures.EXTERNAL_TASK_ID)
+        val response = client.videoEffect.queryByExternalId(credentials, TestFixtures.externalTaskId())
         assertBasicResponse(response)
     }
 

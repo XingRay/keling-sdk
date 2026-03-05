@@ -44,7 +44,7 @@ class MultiImageApiTest : BaseApiIntegrationTest() {
     @Test
     fun queryByExternalId_withCredentials_shouldReturnResponse() = runBlocking {
         assumeEnvReady()
-        val response = client.multiImage.queryByExternalId(credentials, TestFixtures.EXTERNAL_TASK_ID)
+        val response = client.multiImage.queryByExternalId(credentials, TestFixtures.externalTaskId())
         assertBasicResponse(response)
     }
 
